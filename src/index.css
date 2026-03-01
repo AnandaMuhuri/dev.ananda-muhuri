@@ -1,68 +1,51 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #0a0a23;
   }
-  a:hover {
-    color: #747bff;
+
+  a {
+    font-weight: 500;
+    color: #60a5fa;
+    text-decoration: inherit;
   }
-  button {
-    background-color: #f9f9f9;
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: transparent;
   }
 }
+
+/* Rotating diamond borders for hero avatar */
+@keyframes avatar-border-spin {
+  from { transform: rotate(45deg); }
+  to { transform: rotate(405deg); }
+}
+
+.animate-avatar-spin {
+  animation: avatar-border-spin 12s linear infinite;
+}
+
+.animate-avatar-spin-reverse {
+  animation: avatar-border-spin 10s linear infinite reverse;
+}
+
+/* Pause rotation when hovering over the avatar area */
+.avatar-borders-group:hover .animate-avatar-spin,
+.avatar-borders-group:hover .animate-avatar-spin-reverse {
+  animation-play-state: paused;
+}
+
+/* Small helper classes for older styles used in templates */
+.logo { width: 48px; height: 48px }
+.card { padding: 1rem; border-radius: 0.5rem }
+.read-the-docs { margin-top: 1rem }
+

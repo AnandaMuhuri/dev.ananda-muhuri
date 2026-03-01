@@ -1,0 +1,3 @@
+/* Project styles entry (optional). This file can import the base index.css
+   or be used as the Tailwind entry for component-scoped imports. */
+@import '../index.css';

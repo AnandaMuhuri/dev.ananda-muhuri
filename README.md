@@ -43,6 +43,47 @@ export default defineConfig([
 ])
 ```
 
+## Portfolio Starter (Vite + React + Tailwind)
+
+This repository now includes a starter portfolio built with Vite, React (TS), and Tailwind CSS.
+
+Quick setup:
+
+1. Install dependencies:
+
+```bash
+npm install
+# axios used for GitHub API
+npm install axios
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+2. (Optional) Set your GitHub username (or use the default `AnandaMuhuri`) in `.env` or as an env var:
+
+Create a file `.env` in project root:
+
+```
+VITE_GITHUB_USERNAME=AnandaMuhuri
+```
+
+The app will point to `https://github.com/<username>` for links.
+3. Run dev server:
+
+```bash
+npm run dev
+```
+
+Files added:
+- `tailwind.config.cjs`, `postcss.config.cjs`
+- `src/components/*` — `HeroSection`, `AboutSection`, `TechSkills`, `ProjectsGrid`, `ContactForm`
+- `src/services/github.ts` — simple GitHub REST API helper
+
+Notes:
+- The GitHub integration uses the public REST API and is suitable for small numbers of requests. For higher request volumes, add an authenticated token.
+- Styles rely on Tailwind classes; run the install steps above to enable Tailwind processing.
+
+
 You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
 ```js
