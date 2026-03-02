@@ -36,7 +36,7 @@ const HeroSection: React.FC<Props> = ({ name, subtitle }) => {
                 rel="noreferrer"
                 className="inline-flex items-center px-4 py-3 border border-slate-600 rounded-lg text-slate-200 hover:bg-slate-700/50 whitespace-nowrap transition-colors"
               >
-                Resume []
+                Resume
               </a>
             </div>
           </div>
