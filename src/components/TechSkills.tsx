@@ -9,13 +9,14 @@ const TechSkills: React.FC = () => {
         <p className="text-slate-400 mb-8">
           Tools and technologies I use to build scalable systems.
         </p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
           {SKILLS.map((s) => (
             <div
-              key={s}
-              className="py-3 px-4 bg-slate-800/80 border border-slate-700/50 rounded-lg text-slate-200 text-sm font-medium text-center"
+              key={s.name}
+              className="flex flex-col items-center py-3 px-2 bg-slate-800/80 border border-slate-700/50 rounded-lg text-slate-200 text-xs font-medium text-center"
             >
-              {s}
+              {s.Icon ? <s.Icon className="w-6 h-6" /> : null}
+              <span className="mt-1">{s.name}</span>
             </div>
           ))}
         </div>
